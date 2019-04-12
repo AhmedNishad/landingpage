@@ -3,6 +3,61 @@
     padding: 0;
 }
 
+
+
 .container{
     height: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url('./background.jpg');
+    background-size: cover;
+}
+
+
+ 
+
+.branding{
+    height: 250px;
+    margin: auto;
+    padding: 10% 0;
+    background: rgba(255, 255, 255, 0.5);
+    width: 50%;
+}
+
+#changing-text{
+    height: 50%;
+    margin: auto auto;
+    text-align: center;
+    font-size: 3.4em;
+}
+
+#promo{
+    text-align: center;
+    opacity: 1;
+}
+
+.container input, button{
+    display: block;
+    width: 25%;
+    margin: auto;
+}
+
+.container input{
+    width: 400px;
+    height: 35px;
+}
+
+.container button{
+    width: 400px;
+    height: 25px;;
+}
+
+@media screen and (max-width: 1300px) {
+    .container{
+        height: 100%;
+        color: white;
+    }
+    .branding{
+        width: 85%;
+    }
 }
