@@ -6,18 +6,39 @@ let i = 0;
 header.style.display = 'hidden';
 
 window.setInterval(function(){
-    
-    fadeOut(header);
+    /*
+    fadeOutFadeIn(header, fadeIn);
     if(i < words.length-1){
         i++;
     }else{
         i=0;
     }
     header.innerText = words[i]
-    //header.style.opacity = '1';
-    fadeIn(header);
+    //header.style.opacity = '1';*/
 
-}, 4000);
+    /*
+    let timer = window.setInterval(function(){
+        fadeOut(header);
+        setInterval(function(){
+            fadeIn(header);
+            window.clearInterval(timer);
+        },50);
+        
+       
+        
+    }, 200);
+    */
+
+    
+    header.innerText = words[i];
+    if(i < words.length-1){
+        i++;
+    }else{
+        i=0;
+    }
+    fadeOut(header);
+
+}, 3000);
 
 let promotext = "Be a part of the Revolution...";
 
@@ -34,20 +55,22 @@ window.setInterval(function(){
 }, 1000)
 
 function fadeOut(element) {
-    var op = 1;  // initial opacity
+    let op = 1;  // initial opacity
     var timer = setInterval(function () {
-        if (op <= 0.1){
+        if (op <= 0.05){
             clearInterval(timer);
             element.style.display = 'hidden';
         }
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op -= op * 0.1;
-    }, 50);
+    }, 80)
+    //callback(element);
+    ;
 }
 
-function fadeIn(element) {
-    var op = 0.1;  // initial opacity
+var fadeIn = function (element) {
+    let op=1;
     var timer = setInterval(function () {
         if (op == 1){
             clearInterval(timer);
@@ -56,5 +79,5 @@ function fadeIn(element) {
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op += op * 0.1;
-    }, 50);
+    }, 100);
 }
